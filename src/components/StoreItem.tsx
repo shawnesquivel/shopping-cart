@@ -1,4 +1,5 @@
-import { Card } from "react-bootstrap";
+import { useState } from "react";
+import { Button, Card } from "react-bootstrap";
 import { formatCurrency } from "../utilities/formatCurrency";
 
 type StoreItemProps = {
@@ -9,7 +10,7 @@ type StoreItemProps = {
 };
 
 export const StoreItem = ({ id, name, price, imgUrl }: StoreItemProps) => {
-  const quantity = 0;
+  const [quantity, setQuantity] = useState(0);
 
   return (
     <Card className="h-100">
@@ -26,7 +27,46 @@ export const StoreItem = ({ id, name, price, imgUrl }: StoreItemProps) => {
         </Card.Title>
       </Card.Body>
 
-      <div className="mt-auto"></div>
+      <div className="mt-auto mb-3">
+        {quantity === 0 ? (
+          <Button
+            className="w-100"
+            onClick={() => {
+              setQuantity(quantity + 1);
+            }}
+          >
+            +Add To Cart
+          </Button>
+        ) : (
+          <div
+            className="d-flex flex-column align-items-center justify-content-center"
+            style={{ gap: "0.5rem" }}
+          >
+            <div className="d-flex flex-row">
+              <Button
+                onClick={() => {
+                  setQuantity(quantity - 1);
+                }}
+              >
+                -
+              </Button>
+              <Card.Body className="w-50">
+                <span>{quantity} </span>
+                in cart
+              </Card.Body>
+              <Button
+                onClick={() => {
+                  setQuantity(quantity + 1);
+                }}
+              >
+                +
+              </Button>
+            </div>
+
+            <Button className="btn-danger">Remove</Button>
+          </div>
+        )}
+      </div>
     </Card>
   );
 };
