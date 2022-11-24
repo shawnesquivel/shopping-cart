@@ -9,17 +9,17 @@ type CartItemProps = {
 
 export function CartItem({ id, quantity }: CartItemProps) {
   const { removeFromCart } = useShoppingCart();
-  const item = storeItems.find((item) => item.id === id) == null;
+  const item = storeItems.find((item) => item.id === id);
 
   if (item == null) return null;
 
   return (
     <Stack direction="horizontal" gap={2}>
-      <img
+      {/* <img
         src={item.imgUrl}
         alt="product"
         style={{ width: "125px", height: "75px", objectFit: "cover" }}
-      />
+      /> */}
     </Stack>
   );
 

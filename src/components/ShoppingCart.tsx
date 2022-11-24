@@ -13,14 +13,14 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
   return (
     <Offcanvas show={isOpen} onHide={closeCart} placement="end">
       <Offcanvas.Header closeButton>
-        <Offcanvas.Title> Cart</Offcanvas.Title>
+        <Offcanvas.Title>Shopping Cart</Offcanvas.Title>
       </Offcanvas.Header>
 
       <Offcanvas.Body>
         <Stack gap={3}>
-          {cartItems.map((item) => {
-            <CartItem key={item.id} {...item} />;
-          })}
+          {cartItems.map((item) => (
+            <CartItem key={item.id} {...item} />
+          ))}
         </Stack>
       </Offcanvas.Body>
     </Offcanvas>
