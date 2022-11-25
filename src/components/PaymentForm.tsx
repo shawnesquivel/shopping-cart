@@ -78,7 +78,10 @@ const PaymentForm = () => {
         </form>
       ) : (
         <div>
-          <h2>Your payment has been processed</h2>
+          <h2>
+            Your payment has been processed. Please wait 1-2 business days for
+            it to be processed.
+          </h2>
         </div>
       )}
       {paymentError ? <p>There was an error processing your paymenst</p> : ""}
