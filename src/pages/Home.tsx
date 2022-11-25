@@ -1,7 +1,10 @@
+import { Card } from "../components/Card";
+
 export function Home() {
   return (
     <>
-      <h1>home</h1>
+      <h1>Link In Bio</h1>
+      <Card />
     </>
   );
 }

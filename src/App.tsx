@@ -18,10 +18,6 @@ function App() {
             <Route path="/store" element={<Store />} />
             <Route path="/about" element={<About />} />
           </Routes>
-
-          <h1>Hi</h1>
-          <h2>yo</h2>
-          <p>This is a shopping cart website</p>
         </Container>
       </ShoppingCartProvider>
     </>
