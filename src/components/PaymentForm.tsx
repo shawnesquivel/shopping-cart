@@ -78,7 +78,7 @@ const PaymentForm = () => {
         </form>
       ) : (
         <div>
-          <h2>Your payment has been processed!</h2>
+          <h2>Your payment has been processed</h2>
         </div>
       )}
       {paymentError ? <p>There was an error processing your paymenst</p> : ""}
